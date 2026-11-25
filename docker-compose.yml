@@ -1,0 +1,50 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-https://api.zelvira.my.id/api}
+        NEXT_PUBLIC_STORAGE_URL: ${NEXT_PUBLIC_STORAGE_URL:-https://minio.zelvira.my.id}
+        NEXT_PUBLIC_ADMIN_URL: ${NEXT_PUBLIC_ADMIN_URL:-https://admin.zelvira.my.id}
+        NEXT_PUBLIC_MIDTRANS_CLIENT_KEY: ${NEXT_PUBLIC_MIDTRANS_CLIENT_KEY:-Mid-client-DDoZuhWWIzZo_1js}
+        NEXT_PUBLIC_MIDTRANS_IS_PRODUCTION: ${NEXT_PUBLIC_MIDTRANS_IS_PRODUCTION:-true}
+        NEXT_PUBLIC_GOOGLE_CLIENT_ID: ${NEXT_PUBLIC_GOOGLE_CLIENT_ID:-76456849266-1h2btpc4a06lcaoo9d7ku2g8vh9dperu.apps.googleusercontent.com}
+    container_name: zelvira-web
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - NODE_OPTIONS=--max-old-space-size=768
+      - INTERNAL_API_URL=${INTERNAL_API_URL:-https://api.zelvira.my.id/api}
+      - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL:-https://api.zelvira.my.id/api}
+      - NEXT_PUBLIC_STORAGE_URL=${NEXT_PUBLIC_STORAGE_URL:-https://minio.zelvira.my.id}
+      - NEXT_PUBLIC_ADMIN_URL=${NEXT_PUBLIC_ADMIN_URL:-https://admin.zelvira.my.id}
+      - NEXT_PUBLIC_MIDTRANS_CLIENT_KEY=${NEXT_PUBLIC_MIDTRANS_CLIENT_KEY:-Mid-client-DDoZuhWWIzZo_1js}
+      - NEXT_PUBLIC_MIDTRANS_IS_PRODUCTION=${NEXT_PUBLIC_MIDTRANS_IS_PRODUCTION:-true}
+      - NEXT_PUBLIC_GOOGLE_CLIENT_ID=${NEXT_PUBLIC_GOOGLE_CLIENT_ID:-76456849266-1h2btpc4a06lcaoo9d7ku2g8vh9dperu.apps.googleusercontent.com}
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O - http://localhost:3000/ >/dev/null 2>&1 || exit 1"]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+    deploy:
+      resources:
+        limits:
+          cpus: '1.5'
+          memory: 1024M
+        reservations:
+          cpus: '0.2'
+          memory: 384M
+    networks:
+      - zelvira-web-network
+
+networks:
+  zelvira-web-network:
+    driver: bridge
+    name: zelvira-web-network
