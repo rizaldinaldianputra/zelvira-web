@@ -94,11 +94,11 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div
-            className="prose prose-neutral max-w-none prose-headings:font-black prose-headings:tracking-tight prose-headings:text-neutral-900 prose-h1:text-2xl prose-h2:text-xl prose-h2:mt-8 prose-h2:mb-4 prose-h3:text-lg prose-h3:mt-6 prose-h3:mb-3 prose-p:text-neutral-600 prose-p:leading-relaxed prose-li:text-neutral-600 prose-a:text-pink-600 prose-a:font-bold prose-strong:text-neutral-900 bg-white p-8 md:p-12 rounded-[2.5rem] border border-neutral-100 shadow-sm"
+            className="bg-white p-6 sm:p-8 md:p-12 rounded-3xl md:rounded-[2.5rem] border border-neutral-100 shadow-sm text-neutral-700 text-sm md:text-base leading-relaxed space-y-4 [&_h1]:text-2xl [&_h1]:md:text-3xl [&_h1]:font-black [&_h1]:text-neutral-900 [&_h1]:tracking-tight [&_h1]:mt-8 [&_h1]:mb-4 [&_h2]:text-lg [&_h2]:md:text-xl [&_h2]:font-black [&_h2]:text-neutral-900 [&_h2]:tracking-tight [&_h2]:mt-8 [&_h2]:mb-3 [&_h3]:text-base [&_h3]:md:text-lg [&_h3]:font-bold [&_h3]:text-neutral-900 [&_h3]:mt-6 [&_h3]:mb-2 [&_p]:text-neutral-600 [&_p]:leading-relaxed [&_p]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_ul]:mb-4 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:space-y-2 [&_ol]:mb-4 [&_li]:text-neutral-600 [&_li]:leading-relaxed [&_a]:text-pink-600 [&_a]:font-bold [&_a]:underline [&_strong]:text-neutral-900 [&_strong]:font-bold [&_blockquote]:border-l-4 [&_blockquote]:border-pink-400 [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:text-neutral-600 [&_hr]:my-6 [&_hr]:border-neutral-100"
             dangerouslySetInnerHTML={{ __html: policy.content }}
           />
 
-          <div className="rounded-2xl bg-neutral-50 p-6 border border-neutral-100 flex items-center justify-between">
+          <div className="rounded-2xl bg-neutral-50 p-5 sm:p-6 border border-neutral-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="flex items-center gap-3">
               <FileCheck size={20} className="text-emerald-500" />
               <span className="text-xs font-bold text-neutral-700">Kebijakan Privasi Aktif Terverifikasi</span>
