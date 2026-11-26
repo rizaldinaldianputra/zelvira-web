@@ -7,12 +7,12 @@
 export function formatImageUrl(path: string | null | undefined): string {
   if (!path) return '';
 
-  const defaultStorageUrl = 'https://minio.zelvira.my.id';
+  const defaultStorageUrl = 'https://s3.zelvira.co.id';
   let storageUrl = process.env.NEXT_PUBLIC_STORAGE_URL || defaultStorageUrl;
 
   // Sanitize misconfigured or legacy storage domains in env
   if (storageUrl.includes('storage.zelvira.my.id')) {
-    storageUrl = storageUrl.replace(/storage\.zelvira\.my\.id/g, 'minio.zelvira.my.id');
+    storageUrl = storageUrl.replace(/storage\.zelvira\.my\.id/g, 's3.zelvira.co.id');
   }
 
   const cleanStorageUrl = storageUrl.endsWith('/') ? storageUrl.slice(0, -1) : storageUrl;
@@ -23,7 +23,7 @@ export function formatImageUrl(path: string | null | undefined): string {
   }
 
   // If already pointing to the public MinIO, return as-is immediately
-  if (path.startsWith('https://minio.zelvira.my.id') || path.startsWith('http://minio.zelvira.my.id')) {
+  if (path.startsWith('https://s3.zelvira.co.id') || path.startsWith('http://s3.zelvira.co.id')) {
     return path;
   }
 

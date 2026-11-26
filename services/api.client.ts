@@ -3,12 +3,12 @@ import { ApiRequestOptions } from '@/types/api';
 export const getApiBaseUrl = (): string => {
   if (typeof window === 'undefined') {
     // When executing Server-Side (SSR) in Node/Docker, prefer direct internal network URL to avoid 504 timeouts
-    return process.env.INTERNAL_API_URL || process.env.NEXT_PUBLIC_API_URL || 'https://api.zelvira.my.id/api';
+    return process.env.INTERNAL_API_URL || process.env.NEXT_PUBLIC_API_URL || 'https://api.zelvira.co.id/api';
   }
-  return process.env.NEXT_PUBLIC_API_URL || 'https://api.zelvira.my.id/api';
+  return process.env.NEXT_PUBLIC_API_URL || 'https://api.zelvira.co.id/api';
 };
 
-export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.zelvira.my.id/api';
+export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.zelvira.co.id/api';
 
 /**
  * A standard, generic fetch wrapper for centralizing API communications.

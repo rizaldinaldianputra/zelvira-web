@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'minio.zelvira.my.id',
+        hostname: 's3.zelvira.co.id',
         pathname: '/**',
       },
       {
@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'api.zelvira.my.id',
+        hostname: 'api.zelvira.co.id',
         pathname: '/**',
       },
       {

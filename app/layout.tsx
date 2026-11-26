@@ -59,10 +59,10 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <link rel="preconnect" href="https://minio.zelvira.my.id" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://minio.zelvira.my.id" />
-        <link rel="preconnect" href="https://api.zelvira.my.id" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://api.zelvira.my.id" />
+        <link rel="preconnect" href="https://s3.zelvira.co.id" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://s3.zelvira.co.id" />
+        <link rel="preconnect" href="https://api.zelvira.co.id" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://api.zelvira.co.id" />
         <link rel="icon" href="/logo.png" type="image/png" />
         <link rel="apple-touch-icon" href="/logo.png" />
         <link rel="shortcut icon" href="/logo.png" type="image/png" />

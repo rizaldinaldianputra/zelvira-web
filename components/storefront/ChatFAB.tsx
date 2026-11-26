@@ -346,7 +346,7 @@ export default function ChatFAB() {
       if (isLocalhost) {
         return 'ws://localhost:8081/ws-chat-native';
       }
-      const apiBase = process.env.NEXT_PUBLIC_API_URL || 'https://api.zelvira.my.id/api';
+      const apiBase = process.env.NEXT_PUBLIC_API_URL || 'https://api.zelvira.co.id/api';
       const cleanBase = apiBase.replace(/\/api\/?$/, '').replace(/^https:/, 'wss:').replace(/^http:/, 'ws:');
       return `${cleanBase}/ws-chat-native`;
     };

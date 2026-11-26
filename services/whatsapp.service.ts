@@ -12,7 +12,7 @@ export const whatsappService = {
   },
 
   fetchQrCodeBlob: async (): Promise<string> => {
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://api.zelvira.my.id/api';
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://api.zelvira.co.id/api';
     const token = typeof window !== 'undefined' ? localStorage.getItem('zelixa_token') : null;
 
     if (!token || token === 'null' || token === 'undefined') {
